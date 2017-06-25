@@ -123,5 +123,5 @@ def airbrake_error_from_logrecord(record):
     airbrakeerror['filename'] = record.pathname
     airbrakeerror['line'] = record.lineno
     airbrakeerror['function'] = record.funcName
-    airbrakeerror['severity'] = getattr(ErrorLevels, record.levelname)
+    airbrakeerror['severity'] = getattr(ErrorLevels, record.levelname, record.levelname)
     return airbrakeerror
